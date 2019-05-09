@@ -26,10 +26,12 @@ pipeline
         {
             steps
             {
-                sh 'rm -rf /root/.jenkins/workspace/Magento/Test.zip'
+                //sh 'rm -rf /root/.jenkins/workspace/Magento/Test.zip'
                 //sh ' sshpass -p "azure@7870Sdeepu" scp Test.zip chandradeep@168.62.161.130:/var/www/html/ '
 		    
-		sh ' sshpass -p "azure@7870Sdeepu" scp -r [!.git]* chandradeep@168.62.161.130:/var/www/html/ ' 
+		 
+		sh ' sshpass -p "azure@7870Sdeepu" scp -r /root/.jenkins/workspace/Magento/ [!.git]* chandradeep@168.62.161.130:/var/www/html/
+
             }
         }
 
