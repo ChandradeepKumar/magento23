@@ -12,7 +12,7 @@ pipeline
                 echo "This is Demo"
             }
         }
-        /*stage("zip file")
+        stage("zip file")
         {
 	        steps
 	        {
@@ -20,17 +20,17 @@ pipeline
                 sh 'zip -r Test.zip /root/.jenkins/workspace/Magento'
                 echo "END - ZIP"
 	        }
-        }*/
+        }
 
         stage ("deploy")
         {
             steps
             {
                 //sh 'rm -rf /root/.jenkins/workspace/Magento/Test.zip'
-                //sh ' sshpass -p "azure@7870Sdeepu" scp Test.zip chandradeep@168.62.161.130:/var/www/html/ '
+                sh ' sshpass -p "azure@7870Sdeepu" scp Test.zip chandradeep@168.62.161.130:/var/www/html/ '
 		    
-		 
-		sh ' sshpass -p "azure@7870Sdeepu" scp -r /root/.jenkins/workspace/Magento/ [!.git]* chandradeep@168.62.161.130:/var/www/html/ '
+		//sh 'ssh -p "azure@7870Sdeepu" -o StrictHostKeyChecking=No -i -tt chandradeep@168.62.161.130 sudo docker sudo unzip Test.zip'
+		//sh ' sshpass -p "azure@7870Sdeepu" scp -r /root/.jenkins/workspace/Magento/ [!.git]* chandradeep@168.62.161.130:/var/www/html/ '
 
             }
         }
