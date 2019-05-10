@@ -27,9 +27,9 @@ pipeline
             steps
             {
                 //sh 'rm -rf /root/.jenkins/workspace/Magento/Test.zip'
-                //sh ' sshpass -p "azure@7870Sdeepu" scp Test.zip chandradeep@168.62.161.130:/var/www/html/ '
+                sh ' sshpass -p "azure@7870Sdeepu" scp Test.zip chandradeep@168.62.161.130:/var/www/html/ '
 		sh ' sshpass -p "azure@7870Sdeepu" ssh chandradeep@168.62.161.130 "mkdir /var/demo1" ' 
-		//sh 'sshpass -p "azure@7870Sdeepu" -i chandradeep@168.62.161.130 -c "sudo unzip /var/www/html/Test.zip"'
+		sh ' sshpass -p "azure@7870Sdeepu" ssh chandradeep@168.62.161.130 "unzip /var/www/html/Test.zip"'
 		//sh ' sshpass -p "azure@7870Sdeepu" scp -r /root/.jenkins/workspace/Magento/ [!.git]* chandradeep@168.62.161.130:/var/www/html/ '
 
             }
