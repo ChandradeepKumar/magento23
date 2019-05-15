@@ -31,7 +31,7 @@ pipeline
 		//sh ' sshpass -p "azure@7870Sdeepu" rsync -rav -e ssh --exclude='*.git' /root/.jenkins/workspace/Magento/ root@168.62.161.130:/var/www/html/ '
                 sh ' sshpass -p "azure@7870Sdeepu" scp Test.zip chandradeep@168.62.161.130:/var/www/html/ '
 		//sh ' sshpass -p "azure@7870Sdeepu" ssh chandradeep@168.62.161.130 "mkdir /var/demo1" ' 
-		sh ' sshpass -p "azure@7870Sdeepu" ssh chandradeep@168.62.161.130 "unzip /var/www/html/Test.zip"'
+		sh ' sshpass -p "azure@7870Sdeepu" ssh root@168.62.161.130 "unzip /var/www/html/Test.zip"'
 		//sh ' sshpass -p "azure@7870Sdeepu" scp -r [!.]* chandradeep@168.62.161.130:/var/www/html/ '
 
             }
