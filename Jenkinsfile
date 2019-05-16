@@ -28,9 +28,9 @@ pipeline
 	        {
 	                echo "ZIP"
 			sh 'cd .. && zip -r Test.zip Magento --exclude *.git*'
-			sh 'cd .. && ll'
+			sh 'cd .. && ls'
 			sh 'mv ../Test.zip ./'
-			sh 'll'
+			sh 'ls'
 			// sh 'zip -r Test.zip /root/.jenkins/workspace/Magento --exclude *.git* '
 			// sh 'zip -r Test.zip ../Magento --exclude *.git* '
 			echo "END - ZIP"
