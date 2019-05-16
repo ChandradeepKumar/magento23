@@ -27,6 +27,7 @@ pipeline
 	        steps
 	        {
 	                echo "ZIP"
+			sh 'rm -f Test.zip'
 			sh 'cd .. && zip -r Test.zip Magento --exclude *.git*'
 			sh 'cd .. && ls'
 			sh 'mv ../Test.zip ./'
