@@ -20,15 +20,15 @@ pipeline
                 //sh 'sonar-scanner -Dsonar.projectKey="abc" -Dsonar.sources=.'
                 sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
             }
-        }
+        }*/
 	    
         stage("zip file")
         {
 	        steps
 	        {
                 echo "ZIP"
-                sh 'zip -r Test.zip /root/.jenkins/workspace/Magento --exclude *.git* '
-		//sh 'zip -r Test.zip Magento --exclude *.git* '	
+                //sh 'zip -r Test.zip /root/.jenkins/workspace/Magento --exclude *.git* '
+		sh 'zip -r Test.zip Magento --exclude *.git* '	
                 echo "END - ZIP"
 	        }
         }
@@ -49,11 +49,11 @@ pipeline
 		//sh ' sshpass -p "azure@7870Sdeepu" scp -r [!.]* chandradeep@168.62.161.130:/var/www/html/ '
 
             }
-        }*/
+        }
 	
      }
 
-    post 
+    /*post 
     {
         success 
         {
@@ -71,6 +71,6 @@ pipeline
             emailext body: 'failure: ${env.BUILD_URL}' , subject: 'testing', to: 'chandradeep.kumar@nagarro.com'
         }
                 
-    }
+    }*/
  }
         
