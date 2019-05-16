@@ -13,7 +13,7 @@ pipeline
             }
         }
 	    
-	stage ("sonar")
+	/*stage ("sonar")
         {
             steps
             {
@@ -49,8 +49,28 @@ pipeline
 		//sh ' sshpass -p "azure@7870Sdeepu" scp -r [!.]* chandradeep@168.62.161.130:/var/www/html/ '
 
             }
-        }
+        }*/
 	
      }
+
+    post 
+    {
+        success 
+        {
+              
+            mail to: "chandradeep.kumar@nagarro.com",
+            subject: "SUCCESS: ${currentBuild.fullDisplayName}",
+            body: "successfull ${env.BUILD_URL}" 
+ 
+
+            //emailext body: 'successful: ${env.BUILD_URL}', subject: 'Testing', to: 'chandradeep.kumar@nagarro.com'
+        }
+                
+        failure
+        {
+            emailext body: 'failure: ${env.BUILD_URL}' , subject: 'testing', to: 'chandradeep.kumar@nagarro.com'
+        }
+                
+    }
  }
         
