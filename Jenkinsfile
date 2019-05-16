@@ -13,14 +13,14 @@ pipeline
             }
         }
 	    
-	/*stage ("sonar")
+	stage ("sonar")
         {
             steps
             {
                 //sh 'sonar-scanner -Dsonar.projectKey="abc" -Dsonar.sources=.'
                 sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
             }
-        }*/
+        }
 	    
         stage("zip file")
         {
@@ -29,9 +29,8 @@ pipeline
 	                echo "ZIP"
 			sh 'rm -f Test.zip'
 			sh 'cd .. && zip -r Test.zip Magento --exclude *.git*'
-			sh 'cd .. && ls'
 			sh 'mv ../Test.zip ./'
-			sh 'ls'
+			
 			// sh 'zip -r Test.zip /root/.jenkins/workspace/Magento --exclude *.git* '
 			// sh 'zip -r Test.zip ../Magento --exclude *.git* '
 			echo "END - ZIP"
