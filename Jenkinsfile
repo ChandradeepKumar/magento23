@@ -12,6 +12,16 @@ pipeline
                 echo "This is Demo"
             }
         }
+	    
+	stage ("sonar")
+        {
+            steps
+            {
+                //sh 'sonar-scanner -Dsonar.projectKey="abc" -Dsonar.sources=.'
+                sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
+            }
+        }
+	    
         stage("zip file")
         {
 	        steps
@@ -23,6 +33,8 @@ pipeline
 	        }
         }
 
+	
+        
         stage ("deploy")
         {
             steps
