@@ -24,7 +24,7 @@ pipeline
         {
             steps
             {
-                //sh 'docker rm -f container1'
+                sh 'docker rm -f container1'
                 sh 'docker run --name container1 -d -p 9098:8080 image1 '
             }
         }
