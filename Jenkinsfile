@@ -13,21 +13,21 @@ pipeline
             }
         }
 	 
-	/*stage ("Image Build")
+	stage ("Image Build")
 	{
 	    steps
 	    {
 		    sh 'docker build -t image1 .' //build image
 	    }
-	}*/
-	stage('Image Run')
+	}
+	/*stage('Image Run')
         {
             steps
             {
                 
                 sh 'docker run --name container1 -d -p 9098:8080 alexcheng/magento2 '
             }
-        }
+        }*/
 
 	/*stage ("sonar")
         {
