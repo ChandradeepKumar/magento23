@@ -12,8 +12,15 @@ pipeline
                 echo "This is Demo"
             }
         }
-	    
-	stage ("sonar")
+	 
+	stage ("Image Build")
+	    {
+		    steps
+		    {
+		    	sh 'docker build --no-cache -t deepu157915/jenkins-dtr/chandra_devops .' //build image
+		    }
+	    }
+	/*stage ("sonar")
         {
             steps
             {
@@ -35,11 +42,11 @@ pipeline
 			// sh 'zip -r Test.zip ../Magento --exclude *.git* '
 			echo "END - ZIP"
 	        }
-        }
+        }*/
 
 	
         
-        stage ("deploy")
+        /*stage ("deploy")
         {
             steps
             {
@@ -53,7 +60,7 @@ pipeline
 		//sh ' sshpass -p "azure@7870Sdeepu" scp -r [!.]* chandradeep@168.62.161.130:/var/www/html/ '
 
             }
-        }
+        }*/
 	
      }
 
