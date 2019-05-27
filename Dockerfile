@@ -1,9 +1,5 @@
 FROM centos:7
 
-RUN yum install httpd
-RUN systemctl start httpd.service
-
-
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install httpd && \
     yum clean all
