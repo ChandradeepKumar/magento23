@@ -17,10 +17,10 @@ pipeline
 	{
 	    steps
 	    {
-		    sh 'docker build --no-cache -t deepu157915/jenkins-dtr/chandra_devops .' //build image
+		    sh 'docker build -t image1 .' //build image
 	    }
 	}
-	stage('push Image')
+	/*stage('push Image')
         {
             steps
             {
@@ -28,7 +28,7 @@ pipeline
                 sh 'docker tag chandra_devops deepu157915/chandra_devops'
                 sh 'docker push deepu157915/chandra_devops'
             }
-        }
+        }*/
 
 	/*stage ("sonar")
         {
