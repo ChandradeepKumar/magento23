@@ -20,15 +20,14 @@ pipeline
 		    sh 'docker build -t image1 .' //build image
 	    }
 	}
-	/*stage('push Image')
+	stage('Image Run')
         {
             steps
             {
-                sh 'docker login -u deepu157915 -p kpr@7870S'
-                sh 'docker tag chandra_devops deepu157915/chandra_devops'
-                sh 'docker push deepu157915/chandra_devops'
+                
+                sh 'docker run --name container1 -d -p 9098:8080 image1'
             }
-        }*/
+        }
 
 	/*stage ("sonar")
         {
