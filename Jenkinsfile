@@ -20,14 +20,14 @@ pipeline
 		    sh 'docker build -t image1 .' //build image
 	    }
 	}
-	/*stage('Image Run')
+	stage('Image Run')
         {
             steps
             {
-                
-                sh 'docker run --name container1 -d -p 9098:8080 alexcheng/magento2 '
+                sh 'docker rm -f container1'
+                sh 'docker run --name container1 -d -p 9098:8080 image1 '
             }
-        }*/
+        }
 
 	/*stage ("sonar")
         {
