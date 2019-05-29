@@ -25,7 +25,7 @@ pipeline
             steps
             {
                 //sh 'docker rm -f container1'
-                sh 'docker run --name container1 -i -d -p image1 '
+                sh 'docker run --name container1 -i -d image1 '
             }
         }
 
