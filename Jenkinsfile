@@ -25,7 +25,7 @@ pipeline
             steps
             {
                 sh 'docker rm -f cont1'
-                sh 'docker run --name cont1 -i -d -p 80:80 image1 '
+                sh 'docker run --name cont1 -i -d -p 9096:80 image1 '
             }
         }
 
