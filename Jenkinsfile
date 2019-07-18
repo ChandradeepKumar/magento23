@@ -22,7 +22,7 @@ pipeline
             }
         } */
 	
-	stage ("Image Build")
+	/*stage ("Image Build")
 	{
 	    steps
 	    {
@@ -36,9 +36,9 @@ pipeline
                 sh 'docker rm -f cont1'
                 sh 'docker run --name cont1 -i -d -p 9096:80 image1 '
             }
-        }
+        }*/
 
-	/*
+	
 	    
         stage("zip file")
         {
@@ -53,7 +53,7 @@ pipeline
 			// sh 'zip -r Test.zip ../Magento --exclude *.git* '
 			echo "END - ZIP"
 	        }
-        }*/
+        }
 
 	
         
@@ -95,3 +95,4 @@ pipeline
                 
     }*/
  }
+}
