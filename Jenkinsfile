@@ -26,7 +26,7 @@ pipeline
 	{
 	    steps
 	    {
-		    sh 'docker build -t image1 .' // for build image
+		    sh 'docker build -t image1 .' // for build a image
 	    }
 	}
 	stage('Image Run')
