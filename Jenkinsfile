@@ -40,7 +40,7 @@ pipeline
 
 	
 	    
-        stage("zip file")
+        /*stage("zip file")
         {
 	        steps
 	        {
@@ -53,7 +53,7 @@ pipeline
 			// sh 'zip -r Test.zip ../Magento --exclude *.git* '
 			echo "END - ZIP"
 	        }
-        }
+        }*/
 
 	
         
