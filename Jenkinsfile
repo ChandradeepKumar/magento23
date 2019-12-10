@@ -1,5 +1,9 @@
 pipeline
 {
+	parameters
+	{
+    	booleanParam(defaultValue: true, name: 'LogicApp',description: ' ')
+	}
     agent  any
     stages
     {
