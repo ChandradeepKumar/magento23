@@ -2,7 +2,13 @@ pipeline
 {
 	parameters
 	{
-    	booleanParam(defaultValue: true, name: 'LogicApp',description: ' ')
+    		//booleanParam(defaultValue: true, name: 'LogicApp',description: ' ')
+		choice(name:'TargetResourceGroup',
+			  choices:['RG-SM-DEV-MP-BusinessServices','RG-SM-DEV-MO-BusinessServices','RG-SM-QA-BusinessServices','RG-SM-RC-BusinessServices','RG-SM-Performance-BusinessServices','myLutron-RG-Prod-Saltmarsh-BusinessServices'])
+			  
+		choice(name:'TargetSlot',
+			  choices:['production','staging'])
+		string(name: 'SourceBranch', defaultValue: 'develop')
 	}
     agent  any
     stages
