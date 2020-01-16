@@ -84,7 +84,7 @@ pipeline
 	
      
 
-    /*post 
+    post 
     {
         success 
         {
@@ -102,6 +102,6 @@ pipeline
             emailext body: 'failure: ${env.BUILD_URL}' , subject: 'testing', to: 'chandradeep.kumar@nagarro.com'
         }
                 
-    }*/
+    }
  }
 }
