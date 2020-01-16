@@ -21,7 +21,7 @@ pipeline
                 echo "This is Demo"
             }
         }
-	 
+    } 
 	/*stage ("sonar")
         {
             steps
@@ -103,5 +103,5 @@ pipeline
         }
                 
     }
- }
+ 
 }
